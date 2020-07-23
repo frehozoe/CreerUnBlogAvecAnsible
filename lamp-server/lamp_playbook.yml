@@ -1,0 +1,111 @@
+---
+# web-server
+- hosts: web
+  become: true
+  vars_files: vars/main.yml
+
+  tasks:
+  - name: "Installer apache2 et la dernière version de PHP"
+    apt:
+      name:
+        - apache2
+        - php
+        - php-mysql
+      state: present
+      update_cache: yes
+
+  - name: "Donner le droit 755 pour le répertoire /var/www/html"
+    file:
+      path: /var/www/html
+      state: directory
+      mode: '0755'
+
+  - name: "Supprimer la page par défaut (index.html) de Apache"
+    file:
+      path: /var/www/html/index.html
+      state: absent
+
+  - name: "Copier le contenu du répertoire 'app' vers la racine de Apache"
+    copy:
+      src: app/
+      dest: /var/www/html/
+  
+  - name: "Charger le fichier de config  de la base de données"
+    template:
+      src: "db-connexion.php.j2"
+      dest: "/var/www/html/db-connexion.php"
+
+  - name: "Garder l'état actif de Apache"
+    service:
+      name: apache2
+      state: started
+      enabled: yes
+
+# db
+- hosts: bdd
+  become: true
+  vars_files: vars/main.yml
+  vars:
+    root_password: "my_secret_password"
+
+  tasks:
+  - name: "Installer MySQL"
+    apt:
+      name:
+        - mysql-server
+        - python-mysqldb
+      state: present
+      update_cache: yes
+  - name: "Configurer l'accès à MySQL"
+    copy:
+      dest: "/root/.my.cnf"
+      content: |
+        [client]
+        user=root
+        password={{ root_password }}
+      mode: 0400
+
+  - name: "Etape1: Autoriser l'accès à MySQL depuis l'extérieur"
+    lineinfile:
+      path: /etc/mysql/mysql.conf.d/mysqld.cnf
+      regexp: '^skip-external-locking'
+      line: "# skip-external-locking"
+    notify: Restart mysql
+  - name: "Etape2: Autoriser l'accès à MySQL depuis l'extérieur"
+    lineinfile:
+      path: /etc/mysql/mysql.conf.d/mysqld.cnf
+      regexp: '^bind-address'
+      line: "# bind-address"
+    notify: Restart mysql
+
+  - name: "Charger la table SQL"
+    template:
+      src: "table.sql.j2"
+      dest: "/tmp/table.sql"
+
+  - name: "Ajouter la table SQL dans la base de données"
+    mysql_db:
+      name: "{{ mysql_dbname }}"
+      state: present
+      login_user: root
+      login_password: '{{ root_password  }}'
+      state: import
+      target: /tmp/table.sql
+
+  - name: "Créer l'utilisateur {{ mysql_user }} avec tous les privilèges sur {{ mysql_dbname }}"
+    mysql_user:
+      name: "{{ mysql_user }}"
+      password: "{{ mysql_password }}"
+      priv: "{{ mysql_dbname }}.*:ALL"
+      host: "{{ webserver_host }}"
+      state: present
+      login_user: root
+      login_password: '{{ root_password }}'
+      login_unix_socket: /var/run/mysqld/mysqld.sock
+
+  handlers:
+    - name: "Redémarrer mysql"
+      service:
+        name: mysql
+        state: restarted
+ 

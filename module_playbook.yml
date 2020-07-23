@@ -1,0 +1,11 @@
+---
+
+- name: "Intérroger la base de donnees"
+  hosts: bdd
+  tasks:
+     - name: "Compter le nombre d'articles publiés"
+       articles:
+         db_name: "blog"
+         request: "SELECT COUNT(*) FROM articles;"
+       register: resultat
+     - debug: var=resultat
