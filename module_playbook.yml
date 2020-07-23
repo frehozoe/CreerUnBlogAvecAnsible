@@ -9,3 +9,4 @@
          request: "SELECT COUNT(*) FROM articles;"
        register: resultat
      - debug: var=resultat
+
