@@ -5,7 +5,6 @@
 
    require 'db-connexion.php';
 
-
    function Valider(PDO $PDO){
       if(!isset($_POST["titre"]) || empty($_POST["titre"])) {
           echo '<p style="color: red; font-weight: bold;">Veuillez ajouter un titre à votre article.</p>';
