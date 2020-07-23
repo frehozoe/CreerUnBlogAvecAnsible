@@ -1,6 +1,7 @@
 # CreerUnBlogAvecAnsible
 L'objectif de ce projet est de **créer un simple module Ansible**, écrit en Python, pour gérer une base de données d'un blog. Pour faire fonctionner le blog et de tester le bon fonctionnement de ce module Ansible, vous avez besoin d'installer un stack LAMP (Linux Apache MySQL PHP). L'installation de ce stack LAMP sera automatiser à l'aide d'Ansible.
 
+
 # PRE-REQUIS
 1. Avoir installé 03 machines Linux : Ubuntu ou Debian 
     * **node-manager** : permet de gérer les deux nodes via SSH pour y pousser les scripts de config.
