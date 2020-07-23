@@ -1,7 +1,6 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-
 DOCUMENTATION='''
 version: 1.0
 date: 16/07/2020
@@ -62,4 +61,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
