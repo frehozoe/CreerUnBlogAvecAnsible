@@ -43,7 +43,7 @@ cd downloads
 sudo wget https://github.com/frehozoe/CreerUnBlogAvecAnsible/archive/master.zip
 ```
 
-_// Dézippez le dossier **master.zip**_
+_// Dézippez le dossier **master.zip**, n'hésitez pas à installer le paquet **unzip** s'il n'existe pas en faisant : **"sudo apt install unzip -y"**_
 ```
 sudo unzip master.zip
 ```
