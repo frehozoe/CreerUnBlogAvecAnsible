@@ -48,7 +48,7 @@ _// Dézippez le dossier **master.zip**_
 sudo unzip master.zip
 ```
 
-_// Lancez le déploiement_
+_// Lancez le déploiement du stack LAMP_
 ```
 cd CreerUnBlogAvecAnsible-master/lamp-server/
 ansible-playbook lamp_playbook.yml
