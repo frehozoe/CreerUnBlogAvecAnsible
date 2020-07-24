@@ -72,4 +72,4 @@ _// Pour savoir le nombres d'articles crées ou publiés sur votre blog, tapez l
 ansible-playbook -i inventaire.ini module_playbook.yml -K -b
 ```
 
-_// Utilisez le mot de passe de l'utilisateur Ansible sur **"BECOME Password: "**_
+_// Utilisez le mot de passe de l'utilisateur Ansible sur **"BECOME Password : "**_
