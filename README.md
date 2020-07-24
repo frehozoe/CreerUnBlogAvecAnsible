@@ -70,5 +70,6 @@ Le module Ansible se trouve dans le dossier **"library/"**.
 _// Pour savoir le nombres d'articles crées ou publiés, taper la commande suivante :_
 ```
 ansible-playbook -i inventaire.ini module_playbook.yml -K -b
-BECOME Password :  **<-- (Tapez mot-de-passe_user-ansible)**
 ```
+
+_// Tapez le mot de passe de l'utilisateur Ansible (user-ansible) dans **BECOME Password : **_
