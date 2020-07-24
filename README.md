@@ -4,7 +4,7 @@ L'objectif de ce projet est de **créer un simple module Ansible**, écrit en Py
 
 # PRE-REQUIS
 1. Avoir installé 03 machines Linux : Ubuntu ou Debian 
-    * **node-manager** : permet de gérer les deux nodes via SSH pour y pousser les scripts de config.
+    * **node-manager** : permet de gérer les deux nodes via **SSH** pour y pousser les scripts de config.
     * **node-1** : membre du groupe **web-server**, où Apache et PHP seront installés.
     * **node-2** : membre du groupe **db**, où la base de données MySQL sera installé.
 
