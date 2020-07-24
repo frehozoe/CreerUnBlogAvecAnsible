@@ -58,7 +58,7 @@ ansible-playbook lamp_playbook.yml
 Désormais, si tout s'est bien déroulé, le stack LAMP est installé. La base de données et la table sont créées et le blog est opérationnel.
 
 
-_// Testez et créez votre premier article, en tapant l'adresse IP du serveur web dans navigateur._
+_// **Testez et créez votre premier article**, en tapant l'adresse **IP du serveur web** dans navigateur._
 ```
 http://IP-du-node-1
 ```
