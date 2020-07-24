@@ -9,8 +9,13 @@ L'objectif de ce projet est de **créer un simple module Ansible**, écrit en Py
     * **node-2** : membre du groupe **db**, où la base de données MySQL sera installé.
 
 2. **Ansible** doit être installé au préalable et **uniquement** sur **`node-manager`**.
-3. Avoir créé un utilisateur Ansible pour gérer l'outil d'automatisation Ansible.
-4. L'utilisateur Ansible doit avoir le droit **"sudo"** sur tous les nodes.
+3. Vérifier si **Python 2 ou 3** est bien installé sur les nodes.
+4. Définir un **inventaire** des nodes.
+5. Vérifier le **PING** et la **connexion SSH** entre le node-manager et les nodes.
+6. Créer un **utilisateur Ansible non-root** sur les nodes.
+7. L'utilisateur Ansible doit avoir le droit **"sudo"** sur tous les nodes.
+8. Générer **une paire de clés SSH** pour cet utilisateur. 
+9. Copier la **clé publique** sur tous les nodes.
 
 
 # FONCTIONNEMENT
