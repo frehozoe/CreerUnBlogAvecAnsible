@@ -67,9 +67,9 @@ http://IP-du-node-1
 
 Le module Ansible se trouve dans le dossier **"library/"**.
 
-_// Pour savoir le nombres d'articles crées ou publiés, taper la commande suivante :_
+_// Pour savoir le nombres d'articles crées ou publiés sur votre blog, tapez la commande suivante (en utilisant le mot de passe de l'utilisateur Ansible):_
 ```
 ansible-playbook -i inventaire.ini module_playbook.yml -K -b
-BECOME Password:  <-- (Tapez mot-de-passe_user-ansible)
+BECOME Password:
 ```
 
