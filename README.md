@@ -29,10 +29,10 @@ L'objectif de ce projet est de **créer un simple module Ansible**, écrit en Py
 
 _// Connectez-vous, sur **`node-manager`**, en tant que utilisateur Ansible_ 
 ```
-su - user-ansible
+ssh user-ansible@node-manager
 ```
 
-_// Positionnez-vous dans Ansible. Si vous l'avez installé depuis la source, tapez la commande suivante :_
+_// Activez l'environnement virtuel Ansible, en tapant la commande suivante :_
 ```
 source ansible2.9.10/bin/activate
 ```
