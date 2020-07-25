@@ -69,6 +69,7 @@ Le module Ansible se trouve dans le dossier **"library/"**.
 
 _// Pour savoir le nombres d'articles crées ou publiés sur votre blog, tapez la commande suivante :_
 ```
+cd ..
 ansible-playbook -i inventaire.ini module_playbook.yml -K -b
 ```
 
