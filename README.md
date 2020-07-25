@@ -6,7 +6,7 @@ L'objectif de ce projet est de **créer un simple module Ansible**, écrit en Py
 1. Avoir installé 03 machines Linux : Ubuntu ou Debian 
     * **node-manager** : permet de gérer les deux nodes via **SSH** pour y pousser les scripts de config.
     * **node-1** : membre du groupe **web-server**, où Apache et PHP seront installés.
-    * **node-2** : membre du groupe **db**, où la base de données MySQL sera installé.
+    * **node-2** : membre du groupe **db**, où la base de données MySQL sera installée.
 
 2. **Ansible** doit être installé au préalable et **uniquement** sur **`node-manager`**.
 3. Vérifier si **Python 2 ou 3** est bien installé sur tous les nodes.
@@ -28,7 +28,7 @@ L'objectif de ce projet est de **créer un simple module Ansible**, écrit en Py
 
 # 1. Stack LAMP
 
-_// Connectez-vous, sur **`node-manager`**, en tant que utilisateur Ansible_ 
+_// Connectez-vous, sur **`node-manager`**, en tant qu'utilisateur Ansible_ 
 ```
 ssh user-ansible@node-manager
 ```
