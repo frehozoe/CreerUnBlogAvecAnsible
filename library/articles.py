@@ -5,7 +5,7 @@ DOCUMENTATION='''
 version: 1.0
 date: 16/07/2020
 module: articles
-author: Fabrice
+author: frehozoe
 description: Module qui permet d'exécuter une requête SQL
 
 options:
