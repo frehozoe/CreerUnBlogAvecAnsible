@@ -24,7 +24,7 @@ L'objectif de ce projet est de **créer un simple module Ansible**, écrit en Py
 * Le playbook **`module_playbook.yml`**: permet de lancer le module **"library/articles.py"**
 
 
-# DEPLOIMENT
+# DEPLOIEMENT
 
 # 1. Stack LAMP
 
